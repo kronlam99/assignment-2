@@ -1,0 +1,121 @@
+<!--booking.html: this is a html file for book system page
+Student Name: Chi Thanh Lam
+Student ID: 18013769-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Assignment 2 | Chi Thanh Lam </title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/all.min.css">
+    <link rel="stylesheet" href="style/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+
+    <style>
+        .error {
+            color: #FF0000;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ################# Header Starts Here#######################--->
+
+    <header class="continer-fluid ">
+        <div id="menu-jk" class="header-bottom">
+            <div class="container">
+                <div class="row nav-row">
+                    <div class="col-lg-3 col-md-12 logo">
+                        <a href="booking.html">
+                            <img src="style/images/logo.png" alt="">
+                            <a data-toggle="collapse" data-target="#menu" href="#menu"><i
+                                    class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
+                        </a>
+                    </div>
+                    <div id="menu" class="col-lg-9 col-md-12 d-none d-lg-block nav-col">
+                        <ul class="navbad">
+                            <li class="nav-item">
+                                <a class="nav-link" href="booking.html">Booking System</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin.html">Admin System</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--  ************************* Page Title Starts Here ************************** -->
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Administration System</h2>
+            </div>
+        </div>
+    </div>
+
+    <br /><br />
+    <div class="container">
+
+        <form>
+            <div class="col-sm-5"><label><b> Booking reference number </b></label><span>:</span></div>
+            <div class="col-sm-7"><span id="booking_reference_number_error" class="error"></span><input type="text"
+                    id="booking_reference_number" onblur="validate_booking_reference_number()"
+                    placeholder="Input booking reference number in here" name="bsearch" class="form-control input-sm"></div>
+            <div class="col-sm-5">
+                <button class="btn btn-success btn-sm" onClick="showRequest('admin_php.php')">Display bookings</button>
+            </div>
+            <br>
+            <p>Note: if it has empty input, the unassigned booking request with a pick-up time within 2 hours from the current time would be displayed on the screen.</p>
+
+        </form>
+
+    </div>
+    <br /><br />
+    <table id="tbl" border="1"></table>
+    <br />
+
+    <input type="button" onClick="assignRequest('assign_php.php')" value="Assign this booking" />
+    <br />
+    <div id="targetDiv"></div>
+    <br />
+    <br />
+    <!-- còn 1 nút chưa tích hợp -->
+
+    <!--  ************************* Footer Start Here ************************** -->
+
+    <footer class="footer">
+        <div class="copyright">
+            <div class="container">
+                <p>
+                    © 2022 Website for purpose of the assessment at AUT. Design by
+                    <a href="https://www.facebook.com/kron.lam/"><strong><u>Chi Thanh Lam</u></strong></a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="style/js/jquery-3.2.1.min.js"></script>
+<script src="style/js/popper.min.js"></script>
+<script src="style/js/bootstrap.min.js"></script>
+<script src="style/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="style/plugins/slider/js/owl.carousel.min.js"></script>
+<script src="style/js/script.js"></script>
+<script type="text/javascript" src="xhr.js"></script>
+<script type="text/javascript" src="admin_javascript.js"></script>
+<script type="text/javascript" src="assign_javascript.js"></script>
+
+</html>

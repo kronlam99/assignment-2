@@ -1,0 +1,15 @@
+create table assign2 (
+	request_id int auto_increment primary key,
+	cname VARCHAR(255) not null,
+	phone VARCHAR(255) not null,
+	unumber VARCHAR(255),
+	snumber VARCHAR(255) not null,
+	stname VARCHAR(255) not null,
+	sbname VARCHAR(255) not null,
+	dsbname VARCHAR(255) not null,
+	date DATETIME not null,
+	booking_reference_number int not null,
+	booking_time DATETIME not null,
+	UNIQUE(booking_reference_number),
+	booking_status VARCHAR(255) DEFAULT 'unassigned' not null
+);
